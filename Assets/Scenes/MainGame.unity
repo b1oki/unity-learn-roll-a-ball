@@ -964,6 +964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   maxJumpHeight: 1
+  scoresText: {fileID: 1857091497}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
