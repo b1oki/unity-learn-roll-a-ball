@@ -29,4 +29,14 @@ public class Player : MonoBehaviour
         }
         _rb.AddForce(movement * speed);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Pick Up"))
+        {
+            other.gameObject.SetActive(false);
+            _count += 1;
+            print("Points: " + _count);
+        }
+    }
 }
