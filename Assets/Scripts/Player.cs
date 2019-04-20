@@ -17,6 +17,12 @@ public class Player : MonoBehaviour
         PlayerControl();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Player entered Trigger tagged " + other.gameObject.tag);
+        PickUpCollectible(other);
+    }
+
     private void PlayerControl()
     {
         var jump = Input.GetAxis("Jump");
@@ -30,11 +36,9 @@ public class Player : MonoBehaviour
         _rb.AddForce(movement * speed);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void PickUpCollectible(Component other)
     {
-        if (other.gameObject.CompareTag("Pick Up"))
-        {
-            other.gameObject.SetActive(false);
-        }
+        if (!other.gameObject.CompareTag("Pick Up")) return;
+        other.gameObject.SetActive(false);
     }
 }
