@@ -1,15 +1,20 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     public float speed;
     public float maxJumpHeight;
+    public Text scoresText;
 
     private Rigidbody _rb;
+    private int _scoresCount;
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _scoresCount = 0;
+        SetScoresText();
     }
 
     private void FixedUpdate()
@@ -41,5 +46,12 @@ public class Player : MonoBehaviour
     {
         if (!other.gameObject.CompareTag("Pick Up")) return;
         other.gameObject.SetActive(false);
+        _scoresCount += 1;
+        SetScoresText();
+    }
+
+    private void SetScoresText()
+    {
+        scoresText.text = "Scores: " + _scoresCount;
     }
 }
