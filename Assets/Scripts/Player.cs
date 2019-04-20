@@ -35,8 +35,6 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("Pick Up"))
         {
             other.gameObject.SetActive(false);
-            _count += 1;
-            print("Points: " + _count);
         }
     }
 }
