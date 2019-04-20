@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
         {
             movement.y = 2.0f;
         }
+
         _rb.AddForce(movement * speed);
     }
 
