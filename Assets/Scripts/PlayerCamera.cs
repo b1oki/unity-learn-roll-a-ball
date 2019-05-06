@@ -14,6 +14,6 @@ public class PlayerCamera : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.position = player.transform.position + _offset * distance;
+        transform.position = player.transform.position + (_offset * distance);
     }
 }
