@@ -45,7 +45,6 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         PlayerControl();
-        Debug.Log(_movement);
     }
 
     private void OnTriggerEnter(Collider other)
